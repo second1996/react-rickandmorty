@@ -1,0 +1,6 @@
+export { default as Header } from './Header/Header'
+export { default as CharactersInfo } from './Characters/CharactersInfo'
+export { default as CharactersCard } from './Characters/CharactersCard'
+export { default as Pagination } from './Pagination/Pagination'
+export { default as Filters } from './Filters/Filters'
+export { default as Modal } from './Modal/Modal'

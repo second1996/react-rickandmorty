@@ -1,0 +1,60 @@
+button, .btn {
+	cursor: pointer;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	border: none;
+	background-color: $trsp;
+	font-family: inherit;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	outline: none !important;
+	transition: $trs;
+
+	&:focus {
+		box-shadow: 0 0 0 2px $border;
+	}
+
+	&:disabled {
+		opacity: 0.7;
+	}
+}
+
+.btn {
+	height: 48px;
+	padding-left: 16px;
+	padding-right: 16px;
+
+	&-primary {
+		background-color: $accent;
+		color: $darken;
+
+		&:hover {
+			background-color: darken($accent, 5%);
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 3px rgba($accent, 0.3);
+		}
+	}
+
+	&-gray {
+		border: 2px solid $border;
+		background-color: $darken;
+		color: $white;
+
+		&:hover {
+			border-color: $accent;
+		}
+
+		&:focus {
+			border-color: $accent;
+			box-shadow: 0 0 0 3px rgba($accent, 0.3);
+		}
+	}
+}

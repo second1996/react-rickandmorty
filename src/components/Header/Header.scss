@@ -1,0 +1,81 @@
+@import '../../assets/styles/helpers';
+
+.header {
+
+	&-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 16px;
+		padding-bottom: 16px;
+
+		@include media(sm) {
+			flex-direction: column;
+		}
+	}
+
+	&-logo {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		font-weight: $w-bold;
+
+		&:hover {
+			.header-logo-img {
+				opacity: 0.65;
+			}
+		}
+
+		&-img {
+			height: 48px;
+			transition: opacity $trs;
+		}
+	}
+
+	&-nav {
+		margin-left: 64px;
+
+		@include media(sm) {
+			margin-top: 32px;
+			margin-left: 0;
+		}
+
+		&-link {
+			position: relative;
+			display: inline-block;
+			color: $white;
+			font-size: 18px;
+			text-decoration: none;
+			transition: color .3s ease;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				margin-top: 6px;
+				height: 2px;
+				background-color: $trsp;
+				transition: background-color $trs;
+			}
+
+			&--active {
+				pointer-events: none;
+				color: $accent;
+
+				&::after {
+					background-color: $accent;
+				}
+			}
+
+			&:not(:last-child) {
+				margin-right: 32px;
+			}
+
+			&:hover {
+				color: $accent;
+			}
+		}
+	}
+}

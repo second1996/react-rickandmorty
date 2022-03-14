@@ -1,0 +1,124 @@
+@import '../../assets/styles/helpers';
+
+.filters {
+	margin-bottom: 32px;
+
+	&-heading {
+		display: flex;
+		align-items: center;
+		margin-bottom: 24px;
+
+		@include media(sm) {
+			justify-content: center;
+		}	
+
+		&-btn {
+			height: 40px;
+			margin-left: 24px;
+		}
+
+		&-title {
+			display: inline-flex;
+			align-items: center;
+			margin-top: 0;
+			margin-bottom: 0;
+
+			> svg {
+				margin-right: 8px;
+				fill: $accent;
+				width: 20px;
+				height: 20px;
+			}
+			
+			> span {
+				font-size: 24px;
+				font-weight: $w-bold;
+			}
+		}
+	}
+
+	&-list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -8px;
+	}
+
+	&-item {
+		flex: 0 0 25%;
+		max-width: 25%;
+		padding: 8px;
+
+		@include media(lg) {
+			flex-basis: 33.33333%;
+			max-width: 33.33333%;
+		}
+
+		@include media(sm) {
+			flex-basis: 100%;
+			max-width: 100%;
+		}
+
+		.Dropdown-root {
+
+			&.is-open {
+
+				.Dropdown-control {
+					border-color: $accent;
+				}
+			}
+
+			.Dropdown-control {
+				cursor: pointer;
+				padding: 12px 52px 12px 16px;
+				border-radius: 6px;
+				border: 2px solid $border;
+				background-color: $dark;
+
+				@include media(sm) {
+					padding: 10px 52px 10px 16px;
+					font-size: 14px;
+				}
+
+				&:hover {
+					border-color: $accent;
+				}
+
+				.Dropdown-placeholder {
+					color: $white;
+				}
+
+				.Dropdown-arrow {
+					top: 20px;
+					right: 16px;
+
+					@include media(sm) {
+						top: 16px;
+					}
+				}
+			}
+
+			.Dropdown-menu {
+				margin-top: 8px;
+				border-radius: 6px;
+				border: 2px solid $accent;
+				background-color: $dark;
+
+				.Dropdown-option {
+					padding-left: 16px;
+					padding-right: 16px;
+					color: $white;
+					transition: background-color $trs;
+
+					&:hover {
+						background-color: rgba($accent, 0.25);
+					}
+
+					&.is-selected {
+						background-color: rgba($accent, 0.9);
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

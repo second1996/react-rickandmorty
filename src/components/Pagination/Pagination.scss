@@ -1,0 +1,79 @@
+@import '../../assets/styles/helpers';
+
+.pagination {
+	margin-top: 48px;
+
+	@include media(sm) {
+		margin-top: 24px;
+	}
+
+	&-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		list-style: none;
+		margin: -8px;
+		padding: 0;
+	}
+
+	&-item {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin: 8px;
+
+		&.disabled {
+			pointer-events: none;
+			opacity: 0.25;
+		}
+	}
+
+	&-break {
+		cursor: pointer;
+
+		&:hover {
+			color: $accent;
+		}
+	}
+
+	&-link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		border-radius: 3px;
+		border: 2px solid $border;
+		background-color: $darken;
+		color: $white;
+		font-size: 16px;
+		line-height: 1;
+		transition: $trs;
+
+		@include media(sm) {
+			width: 32px;
+			height: 32px;
+			font-size: 14px;
+		}
+
+		&:hover {
+			cursor: pointer;
+			border-color: $accent;
+			color: $accent;
+		}
+
+		&-prev,
+		&-next {
+			width: auto;
+			padding-left: 12px;
+			padding-right: 12px;
+			font-size: 15px;
+		}
+
+		&-current {
+			pointer-events: none;
+			border-color: $accent;
+			color: $accent;
+		}
+	}
+}
